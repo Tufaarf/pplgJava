@@ -1,20 +1,15 @@
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class jaraktempuh {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-
         // inputan bobot
-        System.out.println("Masukan Bobot Muatan : ");
-        double bobot = input.nextDouble();
+        double bobot = Double.parseDouble(JOptionPane.showInputDialog(null, "Masukan bobot : "));
 
         // inputan jarak
-        System.out.println("Tentukan Jarak (dalam KM) : ");
-        int jarak = input.nextInt();
+        int jarak = Integer.parseInt(JOptionPane.showInputDialog("Masukan Jarak : "));
 
         // inputan kecepatan
-        System.out.println("Masukan Kecepatan (dalam dalam km/h): ");
-        double kecepatan = input.nextDouble();
+        double kecepatan = Double.parseDouble(JOptionPane.showInputDialog(null, "Masukan Kecepatan : "));
 
         // menghitung waktu 
         double waktu = jarak / kecepatan;
@@ -27,11 +22,6 @@ public class jaraktempuh {
 
 
         // output
-        System.out.println("Anda Membawa Muatan Seberat : " + bobot + ".KG");
-        System.out.println("Waktu Tempuhnya : " + waktu + " Jam");
-        System.out.println("Total Konsumsi BBm (Dalam Liter): " + totalBensin + " liter");
-        System.out.println("Total Biaya BBM adalah : Rp." + totHargaBBM);
-
-        input.close();
-    }
+        JOptionPane.showMessageDialog(null, "Anda Membawa Muatan Seberat : " + bobot + ".KG" + "\nWaktu Tempuhnya :  " + waktu + "\nTotal Konsumsi BBM : " + totalBensin + "\nTotal Biaya BBM Adalah : Rp. " + totHargaBBM);
+}
 }
